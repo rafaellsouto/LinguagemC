@@ -62,16 +62,23 @@ void exibeForca( int e )
 
 int main( void )
 {
+    // banco de palavras
     char banco[30][30] =
     {
         "cafe",
         "garrafa",
         "notebook",
-        "dinheiro"
+        "dinheiro",
+        "programacao",
+        "backend",
+        "frontend",
+        "fullstack",
+        "github"
     };
     
     srand(time(NULL));
     
+    // variáveis
     int sorteioPalavra = rand() % 4; 
     
     char letraUsuario;
@@ -88,6 +95,7 @@ int main( void )
 
     char letrasDigitadas[10] = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
     
+    // preenche vetor statusPalavra
     for( int q = 0; q < TAM; q++ )
     {
         statusPalavra[q] = '_';
@@ -95,6 +103,7 @@ int main( void )
     
     int pos = 0;
     
+    // execução do jogo
     while( encerra == 0 )//erros < 6
     {
         system("clear");
@@ -130,11 +139,13 @@ int main( void )
             }
         }
         
+        // verifica se houve erro
         if( seErrou == 1 )
         {
             erros++;
         }
         
+        // verifica erro e finaliza o jogo
         if(erros==6)
         {
             system("clear");
