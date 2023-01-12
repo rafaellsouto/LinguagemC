@@ -65,6 +65,7 @@ void jogar()
     char mascara[10][10];
     int linhaJogada, colunaJogada;
     int tentativas = 0, maxTentativas = 10;
+    int pontos = 0;
     
     // saudação ao jogador
     cout << "Qual seu nome? ";
