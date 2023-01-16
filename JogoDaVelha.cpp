@@ -134,12 +134,14 @@ void jogar()
         sleep(2);
         cout << "Pressione [ENTER] para continuar." << endl;
         getchar();
+        system("clear");
         menu();
     } else {
         verificaGanhador( tabuleiro );
         sleep(2);
         cout << "Pressione [ENTER] para continuar." << endl;
         getchar();
+        system("clear");
         menu();
     }
 }
@@ -195,12 +197,6 @@ void exibeTatuleiro(char tabuleiro[3][3])
         if( i < 2 )
             cout << "\t" "-----------" << endl; // divisória horizontal
     }
-    
-    // cout << "\t" << '*' << "|"<< '*' << "|"<< '*' << endl;
-    // cout << "\t" "-----" << endl; // divisória horizontal
-    // cout << "\t" << '*' << "|"<< '*' << "|"<< '*' << endl;
-    // cout << "\t" "-----" << endl; // divisória horizontal
-    // cout << "\t" << '*' << "|"<< '*' << "|"<< '*' << endl;
 }
 // =============================================================================
 int verificaGanhador( char tabuleiro[3][3] )
@@ -247,28 +243,6 @@ int verificaGanhador( char tabuleiro[3][3] )
     }
     
     return 1;
-}
-// =============================================================================
-
-
-// =============================================================================
+}// ============================================================================
                             // FIM DO PROGRAMA //
 // =============================================================================
-
-/*
-
-horizontais
-00 01 02
-10 11 12
-20 21 22
-
-diagonais
-00 11 22
-20 11 02
-
-verticais
-00 10 20
-01 11 21
-02 12 22
-
-*/
