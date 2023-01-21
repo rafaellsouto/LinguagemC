@@ -109,8 +109,19 @@ void jogar()
         // cout << "\n" << "Digite a coluna: ";
         // cin >> colunaJogada;
         
-        cout << "Digite a posição conforme o mapa: " << endl;
-        cin >> posicaoJogada;
+        int invalido = 1;
+        while( invalido == 1 )
+        {
+            cout << "Digite a posição conforme o mapa: " << endl;
+            cin >> posicaoJogada;
+            if( posicaoJogada < 0 || posicaoJogada > 9 )
+            {
+                invalido = 1;
+                cout << "Numero inválido. Tente novamente.\n" << endl;
+            }
+            else 
+                invalido = 0;
+        }
         
         // o 1º [] pega a posição do par. o 2º [] pega a posição dentro do par
         // a linha pegará o valor da posição 0 do par e a coluna o valor da posição 1
