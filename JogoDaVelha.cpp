@@ -14,6 +14,7 @@ void jogar();
 void iniciaTabuleiro( char tabuleiro[3][3] );
 void exibeTatuleiro( char tabuleiro[3][3] );
 int verificaGanhador( char tabuleiro[3][3] );
+void mapaPosicoes();
 // =============================================================================
 int main()
 {
@@ -63,6 +64,13 @@ void jogar()
     int tentativas = 0, maxTentativas = 9;
     int mudaTurno = 0;
     int estadoJogo = 1;
+    int posicaoJogada;
+    int posicoes[9][2] = 
+    {
+        {2,0},{2,1},{2,2},
+        {1,0},{1,1},{1,2},
+        {0,0},{0,1},{0,2},
+    };
     
     // iniciando e preenchendo tabuleiro
     iniciaTabuleiro( tabuleiro );
@@ -83,6 +91,7 @@ void jogar()
     cout << "\nTentativas: " << maxTentativas-tentativas << "\n";
     
     exibeTatuleiro(tabuleiro);
+    mapaPosicoes();
     
     while( tentativas < maxTentativas && estadoJogo )
     {
@@ -92,11 +101,22 @@ void jogar()
         else
             cout << "Vez do "<< nomeJogadorDois << ", faça sua joagada!" << endl;
         
+        // comentada parte que pegava linha e coluna de forma individual
+        
         // pega linha e coluna   
-        cout << "\n" << "Digite a linha: ";
-        cin >> linhaJogada;
-        cout << "\n" << "Digite a coluna: ";
-        cin >> colunaJogada;
+        // cout << "\n" << "Digite a linha: ";
+        // cin >> linhaJogada;
+        // cout << "\n" << "Digite a coluna: ";
+        // cin >> colunaJogada;
+        
+        cout << "Digite a posição conforme o mapa: " << endl;
+        cin >> posicaoJogada;
+        
+        // o 1º [] pega a posição do par. o 2º [] pega a posição dentro do par
+        // a linha pegará o valor da posição 0 do par e a coluna o valor da posição 1
+        linhaJogada = posicoes[posicaoJogada-1][0];
+        colunaJogada = posicoes[posicaoJogada-1][1];
+        
         
         // bloqueia posições inválidas
         if( tabuleiro[linhaJogada][colunaJogada] == '*' )
@@ -123,6 +143,7 @@ void jogar()
         system("clear");
         nomeJogo();
         exibeTatuleiro(tabuleiro);
+        mapaPosicoes();
     }
     // mostra quem ganhou
     if( tentativas == 9 )
@@ -160,31 +181,33 @@ void iniciaTabuleiro( char tabuleiro[3][3] )
 // =============================================================================
 void exibeTatuleiro(char tabuleiro[3][3])
 {
+    // Foi comentada indicações da linhas e colunas para o user
+    
     // exibe posições da coluna
-    cout << "\t";
-    for( int i = 0; i < 3; i++ )
-    {
-        if( i < 3 )
-            cout << " " << i;
-        cout << "  ";
-    }
-    cout << endl;
+    // cout << "\t";
+    // for( int i = 0; i < 3; i++ )
+    // {
+    //     if( i < 3 )
+    //         cout << " " << i;
+    //     cout << "  ";
+    // }
+    // cout << endl;
     // exibe separador coluna
-    cout << "\t";
-    for( int i = 0; i < 3; i++ )
-    {
-        if( i < 3 )
-            cout << " |  ";
-    }
-    cout << endl;
+    // cout << "\t";
+    // for( int i = 0; i < 3; i++ )
+    // {
+    //     if( i < 3 )
+    //         cout << " |  ";
+    // }
+    // cout << endl;
     
     for( int i = 0; i < 3; i++ )
     {
         // exibe posições das linhas
-        if( i < 3 )
-        {
-            cout << i << " - ";
-        }
+        // if( i < 3 )
+        // {
+        //     cout << i << " - ";
+        // }
         cout << "\t";
         for( int j = 0; j < 3; j++ )
         {
@@ -243,6 +266,19 @@ int verificaGanhador( char tabuleiro[3][3] )
     }
     
     return 1;
-}// ============================================================================
+}
+
+void mapaPosicoes()
+{
+    cout << "\n   -| MAPA DE POSIÇÕES |-" << endl;
+    cout << "    ==================== " << endl;
+    
+    cout << "\t 7 | 8 | 9 " << endl;
+    cout << "\t-----------" << endl;
+    cout << "\t 4 | 5 | 6 " << endl;
+    cout << "\t-----------" << endl;
+    cout << "\t 1 | 2 | 3 " << endl;
+}
+// ============================================================================
                             // FIM DO PROGRAMA //
 // =============================================================================
