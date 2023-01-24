@@ -279,6 +279,65 @@ int verificaGanhador( char tabuleiro[3][3] )
     return 1;
 }
 
+// segunda versão
+// int verificaGanhador( char tabuleiro[3][3] )
+// {
+//     // verifica horizontal
+//     for( int linha = 0; linha < 3; linha++ )
+//     {
+//         if( tabuleiro[linha][0] == 'x' && tabuleiro[linha][0] == tabuleiro[linha][1] && tabuleiro[linha][1] == tabuleiro[linha][2] )
+//         {
+//             cout << "X Ganhow! Horizontal preenchida!" << endl;
+//             return 0;
+//         }
+//         else if( tabuleiro[linha][0] == 'o' && tabuleiro[linha][0] == tabuleiro[linha][1] && tabuleiro[linha][1] == tabuleiro[linha][2] )
+//         {
+//             cout << "O Ganhow! Horizontal preenchida!" << endl;
+//             return 0;
+//         }
+//     }
+    
+//     // verifica Verticais
+//     for( int coluna = 0; coluna < 3; coluna++ )
+//     {
+//         if( tabuleiro[0][coluna] == 'x' && tabuleiro[0][coluna] == tabuleiro[1][coluna] && tabuleiro[1][coluna] == tabuleiro[2][coluna] )
+//         {
+//             cout << "X Ganhow! Vertical preenchida!" << endl;
+//             return 0;
+//         } else if( tabuleiro[0][coluna] == 'o' && tabuleiro[0][coluna] == tabuleiro[1][coluna] && tabuleiro[1][coluna] == tabuleiro[2][coluna] )
+//         {
+//             cout << "O Ganhow! Vertical preenchida!" << endl;
+//             return 0;
+//         }
+//     }
+    
+//     // diagonal principal
+//     if( tabuleiro[0][2] == 'x' && tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0] )
+//     {
+//         cout << "X Ganhow! diagonal principal preenchida!" << endl;
+//         return 0;
+        
+//     } else if( tabuleiro[0][2] == 'o' && tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0] )
+//     {
+//         cout << "O Ganhow! diagonal principal preenchida!" << endl;
+//         return 0;
+//     }
+    
+//     // diagonal secundária
+//     if( tabuleiro[0][0] == 'x' && tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2] )
+//     {
+//         cout << "X Ganhow! diagonal secundária preenchida!" << endl;
+//         return 0;
+        
+//     } else if( tabuleiro[0][0] == 'o' && tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2] )
+//     {
+//         cout << "O Ganhow! diagonal secundária preenchida!" << endl;
+//         return 0;
+//     }
+    
+//     return 1;
+// }
+
 void mapaPosicoes()
 {
     cout << "\n   -| MAPA DE POSIÇÕES |-" << endl;
